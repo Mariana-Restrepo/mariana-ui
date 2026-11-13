@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introducción" />
+
+# mariana-ui
+
+Sistema de diseño de **Mariana Restrepo Barrientos**: tokens, componentes en React + TypeScript y esta documentación.
+
+## Principios
+
+1. **Accesible por defecto.** Cada componente sigue WCAG 2.2 AA y los patrones de WAI-ARIA: etiquetas visibles, foco siempre visible, navegación por teclado y textos que entiende un lector de pantalla.
+2. **Tokens antes que valores sueltos.** Los componentes solo usan tokens semánticos (`--mr-color-primary`, `--mr-space-4`…). Cambiar de tema es cambiar tokens, no componentes.
+3. **Nativo cuando se puede.** `<dialog>`, `<input type="checkbox">` y `<button>` ya traen teclado y semántica: se les da estilo en vez de reinventarlos.
+4. **Claro y oscuro.** Usa el selector **Tema** de la barra superior para ver cada componente en los dos modos.
+
+## Uso
+
+```tsx
+import { Button, TextField } from '@mariana-restrepo/mariana-ui'
+import '@mariana-restrepo/mariana-ui/styles.css'
+
+<div data-theme="dark">
+  <TextField label="Correo" type="email" />
+  <Button>Continuar</Button>
+</div>
+```
+
+## Accesibilidad en esta documentación
+
+La pestaña **Accessibility** de cada historia ejecuta axe-core y marca como error cualquier violación de WCAG.

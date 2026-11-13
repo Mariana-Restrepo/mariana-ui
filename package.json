@@ -1,0 +1,50 @@
+{
+  "name": "@mariana-restrepo/mariana-ui",
+  "version": "0.1.0",
+  "description": "Sistema de diseño accesible en React + TypeScript: tokens, componentes y documentación en Storybook.",
+  "author": "Mariana Restrepo Barrientos",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": ["**/*.css"],
+  "files": ["dist"],
+  "main": "./dist/mariana-ui.js",
+  "module": "./dist/mariana-ui.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/mariana-ui.js"
+    },
+    "./styles.css": "./dist/mariana-ui.css"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "build-storybook": "storybook build -o storybook-static"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^9.1.0",
+    "@storybook/addon-docs": "^9.1.0",
+    "@storybook/react-vite": "^9.1.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "storybook": "^9.1.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.0"
+  }
+}

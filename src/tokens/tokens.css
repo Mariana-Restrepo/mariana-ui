@@ -1,0 +1,143 @@
+/* ════════════════════════════════════════════════════════════
+   mariana-ui · Design tokens
+   Capa 1: primitivos (paleta cruda)
+   Capa 2: semánticos (qué significa cada color) ← los componentes usan solo estos
+   Tema: atributo data-theme="light" | "dark" en cualquier contenedor
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Primitivos ─────────────────────────────── */
+  --mr-violet-50: #f3f0ff;
+  --mr-violet-100: #e6e0ff;
+  --mr-violet-300: #b3a4ff;
+  --mr-violet-400: #9a86ff;
+  --mr-violet-600: #5a3de6;
+  --mr-violet-700: #4a2fc7;
+  --mr-violet-900: #24166b;
+
+  --mr-pink-100: #ffe1ea;
+  --mr-pink-400: #ff6b93;
+  --mr-pink-600: #c8174f;
+
+  --mr-green-100: #d9f7ea;
+  --mr-green-400: #3ddbb0;
+  --mr-green-700: #0b7a52;
+
+  --mr-amber-100: #fff1cc;
+  --mr-amber-400: #ffc94d;
+  --mr-amber-800: #8a5a00;
+
+  --mr-red-100: #ffe0dd;
+  --mr-red-400: #ff8a7f;
+  --mr-red-600: #b42318;
+
+  --mr-gray-0: #ffffff;
+  --mr-gray-50: #f7f6fa;
+  --mr-gray-100: #efedf4;
+  --mr-gray-200: #e1dee9;
+  --mr-gray-400: #9c96ab;
+  --mr-gray-600: #5b5570;
+  --mr-gray-800: #2a2538;
+  --mr-gray-850: #1f1b2b;
+  --mr-gray-900: #17141f;
+  --mr-gray-950: #100e16;
+
+  /* ── Tipografía ─────────────────────────────── */
+  --mr-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mr-font-size-xs: 0.75rem;
+  --mr-font-size-sm: 0.875rem;
+  --mr-font-size-md: 1rem;
+  --mr-font-size-lg: 1.125rem;
+  --mr-font-size-xl: 1.5rem;
+  --mr-font-weight-regular: 400;
+  --mr-font-weight-medium: 500;
+  --mr-font-weight-bold: 650;
+  --mr-line-height: 1.5;
+
+  /* ── Espaciado (escala de 4px) ───────────────── */
+  --mr-space-1: 0.25rem;
+  --mr-space-2: 0.5rem;
+  --mr-space-3: 0.75rem;
+  --mr-space-4: 1rem;
+  --mr-space-5: 1.25rem;
+  --mr-space-6: 1.5rem;
+  --mr-space-8: 2rem;
+
+  /* ── Forma y movimiento ─────────────────────── */
+  --mr-radius-sm: 6px;
+  --mr-radius-md: 10px;
+  --mr-radius-lg: 16px;
+  --mr-radius-full: 999px;
+  --mr-duration: 160ms;
+  --mr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mr-focus-ring: 0 0 0 3px var(--mr-color-focus);
+}
+
+/* ── Semánticos · claro (por defecto) ──────────── */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --mr-color-bg: var(--mr-gray-50);
+  --mr-color-surface: var(--mr-gray-0);
+  --mr-color-surface-muted: var(--mr-gray-100);
+  --mr-color-border: var(--mr-gray-200);
+  --mr-color-border-strong: var(--mr-gray-400);
+  --mr-color-text: var(--mr-gray-900);
+  --mr-color-text-muted: var(--mr-gray-600);
+  --mr-color-text-on-primary: var(--mr-gray-0);
+
+  --mr-color-primary: var(--mr-violet-600);
+  --mr-color-primary-hover: var(--mr-violet-700);
+  --mr-color-primary-subtle: var(--mr-violet-50);
+  --mr-color-focus: rgb(90 61 230 / 0.4);
+
+  --mr-color-danger: var(--mr-red-600);
+  --mr-color-danger-subtle: var(--mr-red-100);
+  --mr-color-success: var(--mr-green-700);
+  --mr-color-success-subtle: var(--mr-green-100);
+  --mr-color-warning: var(--mr-amber-800);
+  --mr-color-warning-subtle: var(--mr-amber-100);
+  --mr-color-accent: var(--mr-pink-600);
+  --mr-color-accent-subtle: var(--mr-pink-100);
+
+  --mr-shadow-sm: 0 1px 2px rgb(23 20 31 / 0.06);
+  --mr-shadow-lg: 0 24px 48px -12px rgb(23 20 31 / 0.25);
+  --mr-color-backdrop: rgb(16 14 22 / 0.5);
+}
+
+/* ── Semánticos · oscuro ───────────────────────── */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --mr-color-bg: var(--mr-gray-950);
+  --mr-color-surface: var(--mr-gray-900);
+  --mr-color-surface-muted: var(--mr-gray-850);
+  --mr-color-border: var(--mr-gray-800);
+  --mr-color-border-strong: var(--mr-gray-600);
+  --mr-color-text: var(--mr-gray-50);
+  --mr-color-text-muted: var(--mr-gray-400);
+  --mr-color-text-on-primary: var(--mr-violet-900);
+
+  --mr-color-primary: var(--mr-violet-300);
+  --mr-color-primary-hover: var(--mr-violet-100);
+  --mr-color-primary-subtle: rgb(154 134 255 / 0.14);
+  --mr-color-focus: rgb(179 164 255 / 0.5);
+
+  --mr-color-danger: var(--mr-red-400);
+  --mr-color-danger-subtle: rgb(255 138 127 / 0.14);
+  --mr-color-success: var(--mr-green-400);
+  --mr-color-success-subtle: rgb(61 219 176 / 0.14);
+  --mr-color-warning: var(--mr-amber-400);
+  --mr-color-warning-subtle: rgb(255 201 77 / 0.14);
+  --mr-color-accent: var(--mr-pink-400);
+  --mr-color-accent-subtle: rgb(255 107 147 / 0.14);
+
+  --mr-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --mr-shadow-lg: 0 24px 48px -12px rgb(0 0 0 / 0.6);
+  --mr-color-backdrop: rgb(0 0 0 / 0.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mr-duration: 0ms;
+  }
+}
