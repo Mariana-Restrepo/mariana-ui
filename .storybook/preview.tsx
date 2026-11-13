@@ -1,5 +1,16 @@
 import type { Preview } from '@storybook/react-vite'
 import '../src/tokens/tokens.css'
+import { temaInterfaz, type Estilo, type Tema } from './themes'
+
+/** Mismo tema que la interfaz (lo guarda manager.ts): las páginas de documentación combinan con ella. */
+function temaDocs() {
+  try {
+    const pref = JSON.parse(localStorage.getItem('mariana-ui:interfaz') ?? '{}') as { style?: Estilo; theme?: Tema }
+    return temaInterfaz(pref.style ?? 'minimal', pref.theme ?? 'light')
+  } catch {
+    return temaInterfaz('minimal', 'light')
+  }
+}
 
 const preview: Preview = {
   globalTypes: {
@@ -52,6 +63,10 @@ const preview: Preview = {
   ],
   parameters: {
     layout: 'fullscreen',
+    docs: { theme: temaDocs() },
+    options: {
+      storySort: { order: ['Introducción', 'Fundamentos', ['Tokens'], 'Componentes'] },
+    },
     controls: { matchers: { color: /(background|color)$/i } },
     a11y: { test: 'error' },
     viewport: {
