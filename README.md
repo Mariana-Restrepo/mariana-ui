@@ -1,6 +1,6 @@
 # mariana-ui
 
-Sistema de diseño accesible en **React + TypeScript**: design tokens, 8 componentes y documentación interactiva en Storybook.
+Sistema de diseño de **Mariana Restrepo Barrientos** para aplicaciones **web y móviles**, con dos estilos que comparten la misma base: **Minimal** y **Creativo**, cada uno en modo claro y oscuro.
 
 **[Ver la documentación en vivo →](https://mariana-restrepo.github.io/mariana-ui/)**
 
@@ -8,49 +8,47 @@ Hecho por [Mariana Restrepo Barrientos](https://mariana-restrepo.github.io/Mi-Po
 
 ---
 
-## Por qué existe
+## La idea
 
-Quería una base común para mis proyectos: que se vean consistentes, funcionen con teclado y lector de pantalla, y cambien entre modo claro y oscuro sin reescribir componentes. Este repo es esa base, y también muestra cómo trabajo en el punto donde se unen diseño y código.
+Un mismo producto puede necesitar verse **sobrio** (un banco, una app de salud, una herramienta B2B) o **expresivo** (una marca, una comunidad, una app de lifestyle). En lugar de diseñar dos librerías, mariana-ui separa el **carácter** del **componente**: los componentes leerán solo tokens, y el estilo se elige con un atributo.
 
-## Principios
+| | Minimal | Creativo |
+|---|---|---|
+| Para | Bancos, salud, B2B, herramientas de trabajo | Marcas, comunidades, lifestyle, apps de consumo |
+| Forma | Esquinas discretas, bordes finos, sombras suaves | Píldoras, bordes de tinta, sombras sólidas desplazadas |
+| Tipografía | Plus Jakarta Sans | Bricolage Grotesque + Plus Jakarta Sans |
+| Color | Blanco y negro con acento violeta | Crema, rosa y violeta |
 
-| | |
-|---|---|
-| ♿ **Accesible por defecto** | WCAG 2.2 AA y patrones WAI-ARIA. Cada historia se revisa con axe-core: **0 violaciones** en claro y oscuro. |
-| 🎨 **Tokens primero** | Los componentes solo usan tokens semánticos (`--mr-color-primary`, `--mr-space-4`…). Un tema nuevo = tokens nuevos. |
-| 🧱 **Nativo cuando se puede** | `<dialog>`, `<input type="checkbox">` y `<button>` ya traen teclado y semántica: se les da estilo en vez de reinventarlos. |
-| ✅ **Probado** | 25 pruebas con Vitest + Testing Library que verifican el comportamiento real con mouse y teclado. |
-
-## Componentes
-
-| Componente | Lo importante |
-|---|---|
-| `Button` | 4 variantes, 3 tamaños, estado de carga con `aria-busy`, área táctil ≥ 40px |
-| `TextField` | Etiqueta siempre visible, ayuda y error conectados con `aria-describedby` |
-| `Checkbox` | Casilla nativa con estilo propio y descripción |
-| `Switch` | `role="switch"`, controlado o no controlado |
-| `Badge` | 6 tonos; el color nunca es la única señal |
-| `Card` | Nivel de encabezado configurable para respetar la jerarquía |
-| `Tabs` | Flechas, Inicio/Fin y *roving tabindex*; salta pestañas deshabilitadas |
-| `Dialog` | Sobre `<dialog>`: atrapa el foco, cierra con Esc y devuelve el foco |
-
-## Uso
-
-```tsx
-import { Button, TextField } from '@mariana-restrepo/mariana-ui'
-import '@mariana-restrepo/mariana-ui/styles.css'
-
-export function Login() {
-  return (
-    <div data-theme="dark">
-      <TextField label="Correo" type="email" />
-      <Button>Continuar</Button>
-    </div>
-  )
-}
+```html
+<div data-style="creativo" data-theme="dark">
+  …tu aplicación…
+</div>
 ```
 
-El tema se cambia con `data-theme="light" | "dark"` en cualquier contenedor.
+## Arquitectura de tokens
+
+```
+1. Primitivos   paleta cruda (--mr-violet-600, --mr-pink-400…)       nunca se usan en componentes
+2. Forma        según data-style (--mr-radius-control, --mr-border-width…)
+3. Color        según data-style × data-theme (--mr-color-primary, --mr-shadow-surface…)
+```
+
+Las sombras y el anillo de foco se declaran junto al **color** (no junto a la forma) para que un contenedor con otro tema herede el color correcto.
+
+## Documentación con marca propia
+
+La interfaz de Storybook cambia de piel con los selectores de la barra superior:
+
+| | Claro | Oscuro |
+|---|---|---|
+| **Minimal → Editorial** | Crema, tinta y bronce | Espresso, crema y dorado |
+| **Creativo → Neón** | Blanco lavanda con neones intensos | Ciruela con rosa, amarillo y menta |
+
+Incluye vistas de **móvil (375 y 430), tablet (768) y escritorio (1280)**.
+
+## Estado
+
+Esta versión es la **base del sistema**: tokens y documentación. Los componentes se construirán sobre ella, paso a paso, comparando siempre cómo se ven en Minimal y en Creativo.
 
 ## Desarrollo
 
@@ -60,25 +58,6 @@ npm run dev        # Storybook en http://localhost:6006
 npm test           # pruebas
 npm run build      # librería en dist/
 ```
-
-## Estructura
-
-```
-src/
-├── tokens/tokens.css        # primitivos + semánticos, claro y oscuro
-├── components/<Nombre>/
-│   ├── <Nombre>.tsx         # componente
-│   ├── <Nombre>.css         # estilos (solo tokens)
-│   ├── <Nombre>.test.tsx    # pruebas de comportamiento
-│   └── <Nombre>.stories.tsx # documentación
-└── docs/                    # introducción y tokens en Storybook
-```
-
-## Próximos pasos
-
-- [ ] Select, Tooltip, Toast y Alert
-- [ ] Tokens exportados desde Figma (Variables) con Style Dictionary
-- [ ] Usar mariana-ui en mi [portafolio](https://github.com/Mariana-Restrepo/Mi-Portafolio)
 
 ## Licencia
 
