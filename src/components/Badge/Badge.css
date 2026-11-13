@@ -3,7 +3,8 @@
   align-items: center;
   gap: var(--mr-space-1);
   padding: 2px var(--mr-space-2);
-  border-radius: var(--mr-radius-full);
+  border: var(--mr-border-width) solid transparent;
+  border-radius: var(--mr-radius-badge);
   font-family: var(--mr-font-sans);
   font-size: var(--mr-font-size-xs);
   font-weight: var(--mr-font-weight-bold);
@@ -22,3 +23,8 @@
 .mr-badge--warning { background: var(--mr-color-warning-subtle); color: var(--mr-color-warning); }
 .mr-badge--danger { background: var(--mr-color-danger-subtle); color: var(--mr-color-danger); }
 .mr-badge--accent { background: var(--mr-color-accent-subtle); color: var(--mr-color-accent); }
+
+/* Estilo creativo: las etiquetas llevan contorno del mismo color del texto. */
+[data-style='creativo'] .mr-badge {
+  border-color: currentColor;
+}

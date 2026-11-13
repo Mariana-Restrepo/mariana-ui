@@ -15,8 +15,8 @@
 .mr-field__input {
   min-height: 44px;
   padding: 0 var(--mr-space-3);
-  border: 1px solid var(--mr-color-border-strong);
-  border-radius: var(--mr-radius-md);
+  border: var(--mr-border-width) solid var(--mr-color-border-strong);
+  border-radius: var(--mr-radius-field);
   background: var(--mr-color-surface);
   color: var(--mr-color-text);
   font: inherit;
@@ -31,7 +31,7 @@
 }
 .mr-field__input:focus-visible {
   outline: none;
-  border-color: var(--mr-color-primary);
+  border-color: var(--mr-color-text);
   box-shadow: var(--mr-focus-ring);
 }
 .mr-field__input:disabled {

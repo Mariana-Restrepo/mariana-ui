@@ -7,6 +7,8 @@
   gap: var(--mr-space-1);
   border-bottom: 1px solid var(--mr-color-border);
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
 }
 .mr-tabs__tab {
   position: relative;
@@ -27,7 +29,7 @@
   position: absolute;
   left: var(--mr-space-2);
   right: var(--mr-space-2);
-  bottom: -1px;
+  bottom: 0;
   height: 3px;
   border-radius: 3px 3px 0 0;
   background: var(--mr-color-primary);
@@ -60,4 +62,27 @@
   outline: none;
   box-shadow: var(--mr-focus-ring);
   border-radius: var(--mr-radius-sm);
+}
+
+/* Estilo creativo: pestañas en píldora con sombra sólida en lugar de subrayado. */
+[data-style='creativo'] .mr-tabs__list {
+  gap: var(--mr-space-2);
+  padding: var(--mr-space-1) var(--mr-space-1) var(--mr-space-3);
+  border-bottom: 0;
+}
+[data-style='creativo'] .mr-tabs__tab {
+  border: var(--mr-border-width) solid transparent;
+  border-radius: var(--mr-radius-tab);
+}
+[data-style='creativo'] .mr-tabs__tab::after {
+  display: none;
+}
+[data-style='creativo'] .mr-tabs__tab[aria-selected='true'] {
+  background: var(--mr-color-primary);
+  border-color: var(--mr-color-outline);
+  color: var(--mr-color-text-on-primary);
+  box-shadow: var(--mr-shadow-control);
+}
+[data-style='creativo'] .mr-tabs__tab:focus-visible {
+  box-shadow: var(--mr-focus-ring);
 }

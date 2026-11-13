@@ -2,12 +2,12 @@
   width: min(520px, calc(100vw - 2rem));
   max-height: calc(100vh - 2rem);
   padding: 0;
-  border: 1px solid var(--mr-color-border);
-  border-radius: var(--mr-radius-lg);
+  border: var(--mr-border-width) solid var(--mr-color-outline);
+  border-radius: var(--mr-radius-surface);
   background: var(--mr-color-surface);
   color: var(--mr-color-text);
   font-family: var(--mr-font-sans);
-  box-shadow: var(--mr-shadow-lg);
+  box-shadow: var(--mr-shadow-overlay);
 }
 .mr-dialog::backdrop {
   background: var(--mr-color-backdrop);
@@ -32,8 +32,10 @@
 }
 .mr-dialog__title {
   margin: 0;
+  font-family: var(--mr-font-heading);
   font-size: var(--mr-font-size-xl);
-  font-weight: var(--mr-font-weight-bold);
+  font-weight: var(--mr-heading-weight);
+  letter-spacing: var(--mr-heading-tracking);
   line-height: 1.25;
 }
 .mr-dialog__close {
@@ -44,7 +46,7 @@
   height: 36px;
   margin: -6px -6px 0 0;
   border: 0;
-  border-radius: var(--mr-radius-md);
+  border-radius: var(--mr-radius-control);
   background: transparent;
   color: var(--mr-color-text-muted);
   cursor: pointer;

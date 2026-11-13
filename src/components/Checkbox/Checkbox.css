@@ -14,7 +14,7 @@
   height: 20px;
   margin: 2px 0 0;
   border: 2px solid var(--mr-color-border-strong);
-  border-radius: var(--mr-radius-sm);
+  border-radius: var(--mr-radius-check);
   background: var(--mr-color-surface);
   cursor: pointer;
   transition: background-color var(--mr-duration) var(--mr-ease), border-color var(--mr-duration) var(--mr-ease);

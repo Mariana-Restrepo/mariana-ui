@@ -11,9 +11,10 @@
   width: 44px;
   height: 26px;
   padding: 0;
-  border: 0;
+  border: var(--mr-border-width) solid var(--mr-color-border-strong);
   border-radius: var(--mr-radius-full);
   background: var(--mr-color-border-strong);
+  box-sizing: content-box;
   cursor: pointer;
   transition: background-color var(--mr-duration) var(--mr-ease);
 }
