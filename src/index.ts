@@ -1,18 +1,6 @@
+// mariana-ui · diseño base
+// Por ahora la librería exporta solo los design tokens (Minimal y Creativo, en claro y oscuro).
+// Los componentes se irán agregando aquí a medida que se construyan.
 import './tokens/tokens.css'
 
-export { Button } from './components/Button/Button'
-export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button/Button'
-export { TextField } from './components/TextField/TextField'
-export type { TextFieldProps } from './components/TextField/TextField'
-export { Checkbox } from './components/Checkbox/Checkbox'
-export type { CheckboxProps } from './components/Checkbox/Checkbox'
-export { Switch } from './components/Switch/Switch'
-export type { SwitchProps } from './components/Switch/Switch'
-export { Badge } from './components/Badge/Badge'
-export type { BadgeProps, BadgeTone } from './components/Badge/Badge'
-export { Card } from './components/Card/Card'
-export type { CardProps } from './components/Card/Card'
-export { Tabs } from './components/Tabs/Tabs'
-export type { TabsProps, TabItem } from './components/Tabs/Tabs'
-export { Dialog } from './components/Dialog/Dialog'
-export type { DialogProps } from './components/Dialog/Dialog'
+export {}

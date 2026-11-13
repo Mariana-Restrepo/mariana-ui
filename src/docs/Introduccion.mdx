@@ -4,27 +4,37 @@ import { Meta } from '@storybook/addon-docs/blocks'
 
 # mariana-ui
 
-Sistema de diseño de **Mariana Restrepo Barrientos**: tokens, componentes en React + TypeScript y esta documentación.
+Sistema de diseño de **Mariana Restrepo Barrientos** para aplicaciones web y móviles.
 
-## Principios
+## Dos estilos, un mismo sistema
 
-1. **Accesible por defecto.** Cada componente sigue WCAG 2.2 AA y los patrones de WAI-ARIA: etiquetas visibles, foco siempre visible, navegación por teclado y textos que entiende un lector de pantalla.
-2. **Tokens antes que valores sueltos.** Los componentes solo usan tokens semánticos (`--mr-color-primary`, `--mr-space-4`…). Cambiar de tema es cambiar tokens, no componentes.
-3. **Nativo cuando se puede.** `<dialog>`, `<input type="checkbox">` y `<button>` ya traen teclado y semántica: se les da estilo en vez de reinventarlos.
-4. **Claro y oscuro.** Usa el selector **Tema** de la barra superior para ver cada componente en los dos modos.
+| | Minimal | Creativo |
+|---|---|---|
+| Para | Bancos, salud, B2B, herramientas de trabajo | Marcas, comunidades, lifestyle, apps de consumo |
+| Forma | Esquinas discretas, bordes finos | Píldoras, bordes de tinta, sombras sólidas |
+| Tipografía | Plus Jakarta Sans | Bricolage Grotesque + Plus Jakarta Sans |
+| Color | Blanco y negro con acento violeta | Crema, rosa y violeta |
 
-## Uso
+Cada estilo funciona en **modo claro y oscuro**. Usa los selectores **Estilo** y **Tema** de la barra superior para verlos.
 
-```tsx
-import { Button, TextField } from '@mariana-restrepo/mariana-ui'
-import '@mariana-restrepo/mariana-ui/styles.css'
+## Cómo se usa
 
-<div data-theme="dark">
-  <TextField label="Correo" type="email" />
-  <Button>Continuar</Button>
+```html
+<div data-style="creativo" data-theme="dark">
+  …tu aplicación…
 </div>
 ```
 
-## Accesibilidad en esta documentación
+```tsx
+import '@mariana-restrepo/mariana-ui/styles.css'
+```
 
-La pestaña **Accessibility** de cada historia ejecuta axe-core y marca como error cualquier violación de WCAG.
+## Principios
+
+1. **Accesible por defecto.** WCAG 2.2 AA: contraste suficiente, foco siempre visible y navegación por teclado.
+2. **Tokens antes que valores sueltos.** Los componentes solo leerán tokens semánticos (`--mr-color-primary`, `--mr-radius-control`…). Cambiar de estilo es cambiar tokens, no componentes.
+3. **Web y móvil.** Usa el selector de vistas para revisar cada pantalla en móvil, tablet y escritorio.
+
+## Estado
+
+Esta es la **base del sistema**: tokens y documentación. Los componentes se construirán sobre ella, paso a paso.
