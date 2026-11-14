@@ -50,6 +50,21 @@ Incluye vistas de **móvil (375 y 430), tablet (768) y escritorio (1280)**.
 
 Esta versión es la **base del sistema**: tokens y documentación. Los componentes se construirán sobre ella, paso a paso, comparando siempre cómo se ven en Minimal y en Creativo.
 
+## Cómo se desarrolla: Spec Kit
+
+Cada componente nace de una especificación, siguiendo [Spec Kit](https://github.com/github/spec-kit) y la
+[constitución del proyecto](.specify/memory/constitution.md):
+
+1. `/speckit-specify` · qué se necesita y por qué (web y móvil, Minimal y Creativo, accesibilidad)
+2. `/speckit-clarify` · resolver dudas antes de planificar
+3. `/speckit-plan` · decisiones técnicas, tokens y verificación de la constitución
+4. `/speckit-tasks` · tareas con las pruebas primero
+5. `/speckit-implement` · implementación paso a paso
+
+Principios no negociables: **accesibilidad WCAG 2.2 AA**, **dos estilos para cada componente** y
+**pruebas antes que código**. Las especificaciones viven en `specs/` y las plantillas propias en
+`.specify/templates/overrides/`.
+
 ## Desarrollo
 
 ```bash
