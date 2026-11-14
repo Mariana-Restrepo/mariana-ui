@@ -5,8 +5,12 @@
   "author": "Mariana Restrepo Barrientos",
   "license": "MIT",
   "type": "module",
-  "sideEffects": ["**/*.css"],
-  "files": ["dist"],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/mariana-ui.js",
   "module": "./dist/mariana-ui.js",
   "types": "./dist/types/index.d.ts",
@@ -23,7 +27,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "build-storybook": "storybook build -o storybook-static"
+    "build-storybook": "storybook build -o storybook-static",
+    "limpieza": "knip && node scripts/revisar-lineas.mjs"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -35,11 +40,11 @@
     "@storybook/react-vite": "^9.1.0",
     "@testing-library/jest-dom": "^6.6.0",
     "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^5.0.0",
     "jsdom": "^26.1.0",
+    "knip": "^6.45.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "storybook": "^9.1.0",

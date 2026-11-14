@@ -1,0 +1,17 @@
+/* ════════════════════════════════════════════════════════════
+   mariana-ui · Design tokens
+
+   Dos ejes que se combinan en cualquier contenedor:
+     data-style = "minimal" | "creativo"   → carácter (forma, bordes, sombras, tipografía, paleta)
+     data-theme = "light"   | "dark"       → modo de color
+
+   Capa 1: primitivos (paleta cruda, nunca se usan en componentes)
+   Capa 2: forma, según el estilo
+   Capa 3: color semántico, según estilo × tema  ← los componentes solo leen capas 2 y 3
+   ════════════════════════════════════════════════════════════ */
+
+@import './primitivos.css';
+@import './forma.css';
+@import './color-minimal.css';
+@import './color-creativo.css';
+@import './movimiento.css';

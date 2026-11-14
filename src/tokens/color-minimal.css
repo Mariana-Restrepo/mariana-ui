@@ -1,0 +1,82 @@
+/* mariana-ui · tokens · capa 3: color del estilo Minimal, claro y oscuro (incluye sombras y foco). */
+
+/* ── Minimal · claro (por defecto): blanco y negro con un acento violeta ── */
+:root,
+[data-theme='light'],
+[data-style='minimal'] {
+  color-scheme: light;
+  --mr-color-bg: var(--mr-gray-50);
+  --mr-color-surface: var(--mr-gray-0);
+  --mr-color-surface-muted: var(--mr-gray-100);
+  --mr-color-border: var(--mr-gray-200);
+  --mr-color-border-strong: var(--mr-gray-400);
+  --mr-color-outline: var(--mr-gray-200);
+  --mr-color-text: var(--mr-gray-900);
+  --mr-color-text-muted: var(--mr-gray-600);
+
+  --mr-color-primary: var(--mr-gray-900);
+  --mr-color-primary-hover: var(--mr-gray-800);
+  --mr-color-primary-subtle: var(--mr-gray-100);
+  --mr-color-text-on-primary: var(--mr-gray-0);
+  --mr-color-link: var(--mr-violet-600);
+  --mr-color-focus: rgb(90 61 230 / 0.4);
+
+  --mr-color-danger: var(--mr-red-600);
+  --mr-color-danger-subtle: var(--mr-red-100);
+  --mr-color-success: var(--mr-green-700);
+  --mr-color-success-subtle: var(--mr-green-100);
+  --mr-color-warning: var(--mr-amber-800);
+  --mr-color-warning-subtle: var(--mr-amber-100);
+  --mr-color-accent: var(--mr-violet-600);
+  --mr-color-accent-subtle: var(--mr-violet-50);
+
+  --mr-shadow-sm: 0 1px 2px rgb(23 20 31 / 0.06);
+  --mr-shadow-lg: 0 24px 48px -12px rgb(23 20 31 / 0.25);
+  --mr-color-backdrop: rgb(16 14 22 / 0.5);
+  --mr-focus-ring: 0 0 0 3px var(--mr-color-focus);
+  --mr-shadow-control: none;
+  --mr-shadow-control-hover: none;
+  --mr-shadow-surface: var(--mr-shadow-sm);
+  --mr-shadow-overlay: var(--mr-shadow-lg);
+}
+
+/* ── Minimal · oscuro ── */
+[data-theme='dark'],
+[data-style='minimal'][data-theme='dark'],
+[data-style='minimal'] [data-theme='dark'],
+[data-theme='dark'] [data-style='minimal'] {
+  color-scheme: dark;
+  --mr-color-bg: var(--mr-gray-950);
+  --mr-color-surface: var(--mr-gray-900);
+  --mr-color-surface-muted: var(--mr-gray-850);
+  --mr-color-border: var(--mr-gray-800);
+  --mr-color-border-strong: var(--mr-gray-600);
+  --mr-color-outline: var(--mr-gray-800);
+  --mr-color-text: var(--mr-gray-50);
+  --mr-color-text-muted: var(--mr-gray-400);
+
+  --mr-color-primary: var(--mr-gray-50);
+  --mr-color-primary-hover: var(--mr-gray-200);
+  --mr-color-primary-subtle: var(--mr-gray-850);
+  --mr-color-text-on-primary: var(--mr-gray-900);
+  --mr-color-link: var(--mr-violet-300);
+  --mr-color-focus: rgb(179 164 255 / 0.5);
+
+  --mr-color-danger: var(--mr-red-400);
+  --mr-color-danger-subtle: rgb(255 138 127 / 0.14);
+  --mr-color-success: var(--mr-green-400);
+  --mr-color-success-subtle: rgb(61 219 176 / 0.14);
+  --mr-color-warning: var(--mr-amber-400);
+  --mr-color-warning-subtle: rgb(255 201 77 / 0.14);
+  --mr-color-accent: var(--mr-violet-300);
+  --mr-color-accent-subtle: rgb(154 134 255 / 0.14);
+
+  --mr-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --mr-shadow-lg: 0 24px 48px -12px rgb(0 0 0 / 0.6);
+  --mr-color-backdrop: rgb(0 0 0 / 0.65);
+  --mr-focus-ring: 0 0 0 3px var(--mr-color-focus);
+  --mr-shadow-control: none;
+  --mr-shadow-control-hover: none;
+  --mr-shadow-surface: var(--mr-shadow-sm);
+  --mr-shadow-overlay: var(--mr-shadow-lg);
+}

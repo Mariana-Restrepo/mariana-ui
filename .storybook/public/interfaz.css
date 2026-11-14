@@ -1,0 +1,54 @@
+/* Ajustes finos de la interfaz de Storybook por piel (data-mr-interfaz lo pone manager.ts). */
+
+/* ── Comunes ─────────────────────────────────────── */
+#storybook-explorer-searchfield {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.sidebar-subheading {
+  font-size: 10px !important;
+  letter-spacing: 0.14em !important;
+}
+
+/* ── Editorial (Minimal): selección con borde lateral fino, serif itálica, buscador subrayado ── */
+[data-mr-interfaz^='editorial'] .sidebar-subheading { color: var(--mr-acento) !important; }
+[data-mr-interfaz='editorial-light'] { --mr-acento: #8a6430; --mr-tinta: #1d1b18; }
+[data-mr-interfaz='editorial-dark'] { --mr-acento: #d2ae73; --mr-tinta: #eee8df; }
+
+[data-mr-interfaz^='editorial'] .sidebar-item[data-selected='true'] {
+  background: transparent !important;
+  color: var(--mr-tinta) !important;
+  box-shadow: inset 2px 0 0 var(--mr-acento) !important;
+  border-radius: 0 !important;
+  font-family: Fraunces, Georgia, serif !important;
+  font-style: italic;
+}
+[data-mr-interfaz^='editorial'] .sidebar-item[data-selected='true'] svg { color: var(--mr-acento) !important; }
+[data-mr-interfaz^='editorial'] .search-field {
+  border-bottom: 1px solid var(--mr-tinta) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+[data-mr-interfaz^='editorial'] .search-field svg { color: var(--mr-acento) !important; }
+
+/* ── Neón (Creativo): píldoras, buscador con borde de color, etiquetas en amarillo/rosa ── */
+[data-mr-interfaz='neon-light'] { --mr-rosa: #c8174f; --mr-amarillo: #a86b00; --mr-texto-rosa: #ffffff; }
+[data-mr-interfaz='neon-dark'] { --mr-rosa: #ff6b93; --mr-amarillo: #ffc94d; --mr-texto-rosa: #2a0715; }
+
+[data-mr-interfaz^='neon'] .sidebar-subheading { color: var(--mr-amarillo) !important; }
+[data-mr-interfaz^='neon'] .sidebar-item[data-selected='true'] {
+  background: var(--mr-rosa) !important;
+  color: var(--mr-texto-rosa) !important;
+  border-radius: 999px !important;
+  font-weight: 650;
+}
+[data-mr-interfaz^='neon'] .sidebar-item[data-selected='true'] svg { color: var(--mr-texto-rosa) !important; }
+[data-mr-interfaz^='neon'] .sidebar-item:not([data-selected='true']):hover { border-radius: 999px !important; }
+[data-mr-interfaz^='neon'] .search-field {
+  border: 1.5px solid var(--mr-rosa) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+[data-mr-interfaz^='neon'] .search-field svg { color: var(--mr-rosa) !important; }

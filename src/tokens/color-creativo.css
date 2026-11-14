@@ -1,0 +1,78 @@
+/* mariana-ui · tokens · capa 3: color del estilo Creativo, claro y oscuro (incluye sombras y foco). */
+
+/* ── Creativo · claro: crema, tinta, rosa y violeta ──
+   Los selectores cubren data-style y data-theme en el mismo elemento o en ancestro/descendiente. */
+[data-style='creativo'],
+[data-style='creativo'][data-theme='light'],
+[data-style='creativo'] [data-theme='light'] {
+  color-scheme: light;
+  --mr-color-bg: var(--mr-cream-50);
+  --mr-color-surface: var(--mr-gray-0);
+  --mr-color-surface-muted: #ffeadc;
+  --mr-color-border: #f0dccd;
+  --mr-color-border-strong: var(--mr-ink-900);
+  --mr-color-outline: var(--mr-ink-900);
+  --mr-color-text: var(--mr-ink-900);
+  --mr-color-text-muted: #5b5173;
+
+  --mr-color-primary: var(--mr-pink-600);
+  --mr-color-primary-hover: var(--mr-pink-700);
+  --mr-color-primary-subtle: var(--mr-pink-100);
+  --mr-color-text-on-primary: var(--mr-gray-0);
+  --mr-color-link: var(--mr-violet-600);
+  --mr-color-focus: rgb(200 23 79 / 0.35);
+
+  --mr-color-danger: var(--mr-red-600);
+  --mr-color-danger-subtle: var(--mr-red-100);
+  --mr-color-success: var(--mr-green-700);
+  --mr-color-success-subtle: var(--mr-green-100);
+  --mr-color-warning: var(--mr-amber-800);
+  --mr-color-warning-subtle: var(--mr-amber-100);
+  --mr-color-accent: var(--mr-violet-600);
+  --mr-color-accent-subtle: var(--mr-violet-100);
+
+  --mr-color-backdrop: rgb(27 16 51 / 0.55);
+  --mr-focus-ring: 0 0 0 3px var(--mr-color-focus);
+  --mr-shadow-control: 3px 3px 0 var(--mr-color-outline);
+  --mr-shadow-control-hover: 5px 5px 0 var(--mr-color-outline);
+  --mr-shadow-surface: 6px 6px 0 var(--mr-color-outline);
+  --mr-shadow-overlay: 10px 10px 0 var(--mr-color-outline);
+}
+
+/* ── Creativo · oscuro ── */
+[data-style='creativo'][data-theme='dark'],
+[data-style='creativo'] [data-theme='dark'],
+[data-theme='dark'] [data-style='creativo'] {
+  color-scheme: dark;
+  --mr-color-bg: var(--mr-plum-950);
+  --mr-color-surface: var(--mr-plum-900);
+  --mr-color-surface-muted: var(--mr-plum-850);
+  --mr-color-border: #342a55;
+  --mr-color-border-strong: var(--mr-plum-300);
+  --mr-color-outline: var(--mr-plum-300);
+  --mr-color-text: #f5f0ff;
+  --mr-color-text-muted: var(--mr-plum-300);
+
+  --mr-color-primary: var(--mr-pink-400);
+  --mr-color-primary-hover: var(--mr-pink-300);
+  --mr-color-primary-subtle: rgb(255 107 147 / 0.16);
+  --mr-color-text-on-primary: var(--mr-pink-950);
+  --mr-color-link: var(--mr-violet-300);
+  --mr-color-focus: rgb(255 107 147 / 0.45);
+
+  --mr-color-danger: var(--mr-red-400);
+  --mr-color-danger-subtle: rgb(255 138 127 / 0.14);
+  --mr-color-success: var(--mr-green-400);
+  --mr-color-success-subtle: rgb(61 219 176 / 0.14);
+  --mr-color-warning: var(--mr-amber-400);
+  --mr-color-warning-subtle: rgb(255 201 77 / 0.14);
+  --mr-color-accent: var(--mr-violet-300);
+  --mr-color-accent-subtle: rgb(154 134 255 / 0.16);
+
+  --mr-color-backdrop: rgb(0 0 0 / 0.65);
+  --mr-focus-ring: 0 0 0 3px var(--mr-color-focus);
+  --mr-shadow-control: 3px 3px 0 var(--mr-color-outline);
+  --mr-shadow-control-hover: 5px 5px 0 var(--mr-color-outline);
+  --mr-shadow-surface: 6px 6px 0 var(--mr-color-outline);
+  --mr-shadow-overlay: 10px 10px 0 var(--mr-color-outline);
+}

@@ -1,0 +1,77 @@
+/* mariana-ui · tokens · capa 1: primitivos. Paleta cruda, tipografía, espaciado y radios base. Nunca se usan directamente en componentes. */
+
+:root {
+  /* ── 1. Primitivos ──────────────────────────── */
+  --mr-violet-50: #f3f0ff;
+  --mr-violet-100: #e6e0ff;
+  --mr-violet-300: #b3a4ff;
+  --mr-violet-400: #9a86ff;
+  --mr-violet-600: #5a3de6;
+  --mr-violet-700: #4a2fc7;
+  --mr-violet-900: #24166b;
+
+  --mr-pink-100: #ffe1ea;
+  --mr-pink-300: #ff9bb6;
+  --mr-pink-400: #ff6b93;
+  --mr-pink-600: #c8174f;
+  --mr-pink-700: #a3123f;
+  --mr-pink-950: #2a0715;
+
+  --mr-cream-50: #fff7f0;
+  --mr-ink-900: #1b1033;
+  --mr-plum-950: #120d22;
+  --mr-plum-900: #1c1532;
+  --mr-plum-850: #261d42;
+  --mr-plum-300: #b4a9cf;
+
+  --mr-green-100: #d9f7ea;
+  --mr-green-400: #3ddbb0;
+  --mr-green-700: #0b7a52;
+
+  --mr-amber-100: #fff1cc;
+  --mr-amber-400: #ffc94d;
+  --mr-amber-800: #8a5a00;
+
+  --mr-red-100: #ffe0dd;
+  --mr-red-400: #ff8a7f;
+  --mr-red-600: #b42318;
+
+  --mr-gray-0: #ffffff;
+  --mr-gray-50: #f7f6fa;
+  --mr-gray-100: #efedf4;
+  --mr-gray-200: #e1dee9;
+  --mr-gray-400: #9c96ab;
+  --mr-gray-600: #5b5570;
+  --mr-gray-800: #2a2538;
+  --mr-gray-850: #1f1b2b;
+  --mr-gray-900: #17141f;
+  --mr-gray-950: #100e16;
+
+  /* Tipografía */
+  --mr-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mr-font-display: 'Bricolage Grotesque', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mr-font-size-xs: 0.75rem;
+  --mr-font-size-sm: 0.875rem;
+  --mr-font-size-md: 1rem;
+  --mr-font-size-lg: 1.125rem;
+  --mr-font-size-xl: 1.5rem;
+  --mr-font-weight-regular: 400;
+  --mr-font-weight-medium: 500;
+  --mr-font-weight-bold: 650;
+  --mr-line-height: 1.5;
+
+  /* Espaciado (escala de 4px) */
+  --mr-space-1: 0.25rem;
+  --mr-space-2: 0.5rem;
+  --mr-space-3: 0.75rem;
+  --mr-space-4: 1rem;
+  --mr-space-5: 1.25rem;
+  --mr-space-6: 1.5rem;
+  --mr-space-8: 2rem;
+
+  /* Radios base */
+  --mr-radius-sm: 6px;
+  --mr-radius-md: 10px;
+  --mr-radius-lg: 16px;
+  --mr-radius-full: 999px;
+}

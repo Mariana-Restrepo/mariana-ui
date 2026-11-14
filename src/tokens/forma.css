@@ -1,0 +1,36 @@
+/* mariana-ui · tokens · capa 2: forma según data-style (radios, bordes y tipografía de títulos). */
+
+/* Minimal (por defecto): esquinas discretas, bordes finos, sombras casi invisibles. */
+:root,
+[data-style='minimal'] {
+  --mr-font-heading: var(--mr-font-sans);
+  --mr-heading-weight: 650;
+  --mr-heading-tracking: -0.01em;
+
+  --mr-radius-control: 8px;
+  --mr-radius-field: 8px;
+  --mr-radius-surface: 12px;
+  --mr-radius-badge: 6px;
+  --mr-radius-check: 4px;
+  --mr-radius-tab: 6px;
+
+  --mr-border-width: 1px;
+  --mr-lift: 0px;
+}
+
+/* Creativo: píldoras, bordes de tinta y sombras sólidas desplazadas, títulos expresivos. */
+[data-style='creativo'] {
+  --mr-font-heading: var(--mr-font-display);
+  --mr-heading-weight: 800;
+  --mr-heading-tracking: -0.02em;
+
+  --mr-radius-control: var(--mr-radius-full);
+  --mr-radius-field: 14px;
+  --mr-radius-surface: 22px;
+  --mr-radius-badge: var(--mr-radius-full);
+  --mr-radius-check: 7px;
+  --mr-radius-tab: var(--mr-radius-full);
+
+  --mr-border-width: 2px;
+  --mr-lift: -2px;
+}

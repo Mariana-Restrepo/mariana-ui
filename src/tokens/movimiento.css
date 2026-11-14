@@ -1,0 +1,12 @@
+/* mariana-ui · tokens · duración y curva de las transiciones; respeta prefers-reduced-motion. */
+
+:root {
+  --mr-duration: 160ms;
+  --mr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mr-duration: 0ms;
+  }
+}
