@@ -45,6 +45,7 @@
 | V | Web responsive pensada para móvil (375, 430, 768, 1280; 320 px sin desbordar) | [ ] | |
 | VI | Nativo y simple (elemento HTML nativo, sin dependencias nuevas, API coherente) | [ ] | |
 | VII | Documentado en español (cuándo usar, accesibilidad, ejemplos web y móvil) | [ ] | |
+| VIII | Orden y código limpio (archivo por pieza, ≤ 150 líneas, reutiliza lo existente, sin restos, `npm run limpieza` limpio) | [ ] | |
 
 ## Tokens (Principio II)
 
@@ -79,11 +80,17 @@ src/
 │       ├── [Nombre].tsx           # componente
 │       ├── [Nombre].css           # estilos (solo tokens)
 │       ├── [Nombre].test.tsx      # pruebas de comportamiento (se escriben primero)
-│       └── [Nombre].stories.tsx   # documentación y comparación de estilos
-├── tokens/tokens.css              # tokens nuevos o modificados
-├── docs/                          # páginas de documentación generales
+│       ├── [Nombre].stories.tsx   # documentación y comparación de estilos
+│       └── [Parte].tsx            # partes internas, una por archivo (si hacen falta)
+├── tokens/                        # un archivo por sección (forma, color-minimal, color-creativo…)
+├── hooks/ · utils/                # solo si la lógica la comparten 2 o más componentes
+├── docs/                          # documentación general, una carpeta por sección
 └── index.ts                       # exportación pública
 ```
+
+**Reutilización**: [Componentes, hooks, utilidades o tokens existentes que se reutilizan]
+
+**Archivos que se eliminan o dejan de usarse**: [Ninguno, o cuáles y todo lo relacionado que se borra con ellos]
 
 **Decisión de estructura**: [Confirma la estructura o explica cualquier cambio]
 

@@ -98,7 +98,8 @@ description: "Plantilla de tareas de mariana-ui (en español, pruebas primero)"
 **Propósito**: cumplir las puertas de calidad de la constitución antes de integrar a `main`
 
 - [ ] TXXX [P] Documentación en español en Storybook: cuándo usar y cuándo no, accesibilidad, ejemplos web y móvil
-- [ ] TXXX `npm run typecheck`, `npm test`, `npm run build` y `npm run build-storybook` sin errores
+- [ ] TXXX `npm run typecheck`, `npm test`, `npm run limpieza`, `npm run build` y `npm run build-storybook` sin errores
+- [ ] TXXX Ningún archivo `.ts`, `.tsx` o `.css` de más de 150 líneas; nada comentado ni sin usar
 - [ ] TXXX axe-core con 0 violaciones en las 4 combinaciones (Minimal/Creativo × claro/oscuro)
 - [ ] TXXX Revisión visual en Móvil 375, Móvil grande 430, Tablet 768 y Escritorio 1280
 - [ ] TXXX Mostrar el resultado a Mariana y obtener su aprobación antes de integrar y publicar

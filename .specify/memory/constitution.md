@@ -99,6 +99,27 @@ celular.
 
 **Por qué:** la documentación es la cara pública del sistema y parte del portafolio de Mariana.
 
+### VIII. Orden y código limpio
+
+- **Carpeta por sección y archivo por componente.** Cada archivo exporta una sola pieza principal
+  (un componente, un hook, una utilidad o un grupo de tokens). Las partes internas de un componente
+  viven en archivos propios dentro de su carpeta.
+- Ningún archivo de código o estilos (`.ts`, `.tsx`, `.css`) DEBE superar **150 líneas**. Si las supera, se divide; si no se puede dividir con
+  sentido, se justifica en el plan (*Complexity Tracking*).
+- **Sin código muerto.** Al eliminar algo se borra TODO lo relacionado: archivo, exportaciones,
+  estilos, tokens, historias, pruebas, dependencias y documentación. No se deja código comentado
+  "por si acaso" ni archivos, exportaciones o dependencias sin usar.
+- **Reutilizar antes de crear.** Antes de crear algo se revisa si ya existe. La lógica que usan dos o
+  más componentes vive en `src/hooks/` o `src/utils/` (una por archivo); la que usa uno solo se
+  queda en la carpeta de ese componente.
+- **Nombres:** componentes y sus archivos en `PascalCase`; hooks y utilidades en `camelCase`;
+  carpetas de sección en minúscula.
+- `npm run limpieza` (Knip) DEBE terminar sin hallazgos: ningún archivo, exportación ni dependencia
+  sin usar.
+
+**Por qué:** un sistema de diseño crece por años; archivos pequeños y sin restos hacen que se pueda
+mantener, revisar y evolucionar sin miedo.
+
 ## Restricciones técnicas
 
 - **Lenguaje y framework:** TypeScript en modo `strict` y React ≥ 18 como dependencia *peer*.
@@ -112,9 +133,16 @@ celular.
 - **Documentación:** Storybook 9 con la marca propia (Editorial y Neón), publicada en GitHub Pages
   mediante GitHub Actions.
 - **Navegadores:** las dos últimas versiones de Chrome, Edge, Firefox y Safari, y Safari iOS 16+.
-- **Estructura:** cada componente vive en `src/components/<Nombre>/` con
-  `<Nombre>.tsx`, `<Nombre>.css`, `<Nombre>.test.tsx` y `<Nombre>.stories.tsx`, y se exporta desde
-  `src/index.ts`.
+- **Estructura:**
+  - `src/tokens/`: un archivo por sección (`primitivos`, `forma`, `color-minimal`,
+    `color-creativo`, `movimiento`) y un `index.css` que solo los importa.
+  - `src/components/<Nombre>/`: `<Nombre>.tsx`, `<Nombre>.css`, `<Nombre>.test.tsx` y
+    `<Nombre>.stories.tsx`; las partes internas, en archivos propios de la misma carpeta.
+  - `src/hooks/` y `src/utils/`: solo lógica compartida por dos o más componentes.
+  - `src/docs/`: documentación general, con una carpeta por sección.
+  - `.storybook/interfaz/` (marca de la documentación) y `.storybook/vista-previa/`
+    (selectores, decorador y vistas); los archivos raíz de `.storybook/` solo conectan piezas.
+  - `src/index.ts` es la única exportación pública.
 
 ## Flujo de trabajo y puertas de calidad
 
@@ -128,9 +156,9 @@ celular.
 
 - Cada funcionalidad se trabaja en su propia rama (`NNN-nombre-corto`, la que crea Spec Kit) y se
   integra a `main` cuando cumple todas las puertas.
-- **Puertas de calidad antes de integrar:** `npm run typecheck`, `npm test`, `npm run build` y
-  `npm run build-storybook` sin errores; 0 violaciones de axe-core en las 4 combinaciones; revisión
-  visual en las 4 vistas.
+- **Puertas de calidad antes de integrar:** `npm run typecheck`, `npm test`, `npm run limpieza`,
+  `npm run build` y `npm run build-storybook` sin errores; ningún archivo de más de 150 líneas sin
+  justificar; 0 violaciones de axe-core en las 4 combinaciones; revisión visual en las 4 vistas.
 - **Aprobación de Mariana:** la especificación y el resultado visual de cada componente DEBEN ser
   aprobados por Mariana antes de avanzar a la siguiente etapa y antes de publicar.
 - Los commits siguen Conventional Commits en español (`feat:`, `fix:`, `docs:`, `refactor:`,
@@ -151,4 +179,4 @@ celular.
 - Se revisa el cumplimiento al cerrar cada funcionalidad, con `/speckit-analyze` cuando la
   funcionalidad tenga más de un componente.
 
-**Version**: 1.0.0 | **Ratified**: 2026-11-13 | **Last Amended**: 2026-11-13
+**Version**: 1.1.0 | **Ratified**: 2026-11-13 | **Last Amended**: 2026-11-13
